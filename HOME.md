@@ -1,6 +1,6 @@
 layout: page
-title: "Home"
-permalink: /
+title: "Lean YouTube"
+permalink: /lean-youtube
 
 # My struggle against YouTube Shorts
 I love YouTube. But also, I hate YouTube.
