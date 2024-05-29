@@ -1,11 +1,12 @@
-layout: page
-title: "Lean YouTube"
-permalink: /lean-youtube
-
-# My struggle against YouTube Shorts
+---
+layout: post
+title:  "Crusade against YouTube Shorts"
+date:   2024-05-29 12:09:29 +0300
+categories: jekyll update
+---
 I love YouTube. But also, I hate YouTube.
 
-![[Pasted image 20240527112425.png]](Ducks good... Rabbits bad)
+![Ducks good... Rabbits bad](/assets/duck-rabbit.jpg)
 
 The story so far: In the beginning the TikTok was created. This has made a lot of people very angry and been _widely regarded as a bad move_. However, it became so popular among younger generations, that all big tech media companies decided to ride the wave. That was the beginning of process known as TikTokification. That's why your Instagram feed now consists of random Reels instead of your friends' vacation photos and that's why YouTube now has Shorts.
 
@@ -13,16 +14,16 @@ Thanks to some kind individuals, there are several browser extensions that let y
 
 Now, situation is different. YouTube *knows* that people like short-form content. YouTube *wants* to push it. And that is why after watching a couple of those videos, half of my recommendations now consist of sub-minute "non-shorts".
 
-## Time to unhook
-That's when I decided to take action. The most obvious^[Another solution is to touch grass.] solution would be to filter videos by duration. YouTube doesn't have such feature, but I figured there must be some extension for it, right? Well, maybe. But after searching for 10 minutes and not finding a working solution, I decided to do what every self-respecting programmer does - I decided to write it myself!
+# Time to unhook
+That's when I decided to take action. The most obvious solution would be to filter videos by duration. YouTube doesn't have such feature, but I figured there must be some extension for it, right? Well, maybe. But after searching for 10 minutes and not finding a working solution, I decided to do what every self-respecting programmer does - I decided to write it myself!
 
 My initial idea was detecting video div's with content scripts and then deleting them if length is less than a minute. But it turns out that deleting a div element won't re-render grid layout, leaving ugly empty space on the screen. 
-![[Pasted image 20240529011705.png]]
+![Ugly empty space](/assets/ugly-empty-space.png)
 
 So that's no good. With help of browser developer tools I figured that video list is loaded through requests to one particular API endpoint. Then I read a little bit more about browser extensions and realized something.
 
-## Intercepting requests is cooler than modifying content
-There is a great thing called "background scripts"^[https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts] which opens up a whole world of possibilities. Basically, it lets you control most of you browser's behavior. Requests, tabs, storage - it's all there!
+# Intercepting requests is cooler than modifying content
+There is a great thing called "background scripts" ([docs link](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts)) which opens up a whole world of possibilities. Basically, it lets you control most of you browser's behavior. Requests, tabs, storage - it's all there!
 
 So, in order to intercept requests (and modify responses!) in Firefox, you need a couple of things.
 ### 1. Define `manifest.json` file
@@ -70,11 +71,11 @@ browser.webRequest.onBeforeRequest.addListener(
 - "onBeforeRequest": basically the first event from a series of events that are fired on every request. See diagram below and doc page [here](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest)
 - "listener": our function that will be called when onBeforeRequest event fires
 
-![[Pasted image 20240529014008.png]]
+![webRequests diagram](/assets/webrequests-diagram.png)
 
 ### 3. Modify response
 Now we need to define listener function.
-```js
+``` js
 function listener(details) {
     let filter = browser.webRequest.filterResponseData(details.requestId);
     
@@ -146,5 +147,9 @@ You can read more about filterResponseData object and it's behaviour [here](http
 
 Once we receive full response, we need to decode it, find videos we want to delete, and delete them!
 
-## Conclusions
+# Conclusions
 Intercepting requests with Firefox extensions is simple yet awesome! It solved my problem, and if you encounter similar issues, please consider installing my Firefox Extension "Lean YouTube":  __MISSING_LINK__ and star its [Github project](https://github.com/Demaga/lean-youtube)
+
+# Sources
+
+1. [https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts)
