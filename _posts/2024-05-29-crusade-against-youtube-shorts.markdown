@@ -10,7 +10,7 @@ I love YouTube. But also, I hate YouTube.
 
 The story so far: In the beginning the TikTok was created. This has made a lot of people very angry and been _widely regarded as a bad move_. However, it became so popular among younger generations, that all big tech media companies decided to ride the wave. That was the beginning of process known as TikTokification. That's why your Instagram feed now consists of random Reels instead of your friends' vacation photos and that's why YouTube now has Shorts.
 
-Thanks to some kind individuals, there are several browser extensions that let you disable Shorts sections from YouTube if it bothers you too much. However, YouTube had "Shorts" long before they were a thing. I'm talking about those random 31 second 14 year old memes that randomly popped up in your recommendations. They were great! You see one, you click, you laugh, you move on with your day. 
+Thanks to some kind individuals, there are several browser extensions that let you disable Shorts sections from YouTube if it bothers you too much. However, YouTube had "Shorts" long before they were a thing. I'm talking about those 31 second 14 year old memes that randomly popped up in your recommendations. They were great! You see one, you click, you laugh, you move on with your day. 
 
 Now, situation is different. YouTube *knows* that people like short-form content. YouTube *wants* to push it. And that is why after watching a couple of those videos, half of my recommendations now consist of sub-minute "non-shorts".
 
@@ -148,7 +148,7 @@ You can read more about filterResponseData object and it's behaviour [here](http
 Once we receive full response, we need to decode it, find videos we want to delete, and delete them!
 
 # Conclusions
-Intercepting requests with Firefox extensions is simple yet awesome! It solved my problem, and if you encounter similar issues, please consider installing my Firefox Extension "Lean YouTube":  __MISSING_LINK__ and star its [Github project](https://github.com/Demaga/lean-youtube)
+Intercepting requests with Firefox extensions is simple yet awesome! It solved my problem, and if you encounter similar issues, please consider installing my Firefox Extension "Lean YouTube":  __MISSING_LINK__. Full source code is available on [Github](https://github.com/Demaga/lean-youtube)
 
 # Sources
 
