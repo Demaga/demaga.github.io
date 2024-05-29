@@ -86,7 +86,7 @@ function listener(details) {
 }
 ```
 - "filter": object that we'll use to reference response data
-- "filter.ondata": function that will be called when we start receiving response. Here it is defined as arrow function. Note that we don't get full response^[Now that I've written this I realize that I should have probably used onCompleted event and avoid unnecessary complications] as this API is a little lower level, so we store it in "data" array
+- "filter.ondata": function that will be called when we start receiving response. Here it is defined as arrow function. Note that we don't get full response as this API is a little lower level, so we store it in "data" array
 
 Okay, so now we need to detect when youtube stops sending data and get to "modifying response part".
 ``` js
