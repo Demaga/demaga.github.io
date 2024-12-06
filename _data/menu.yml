@@ -1,0 +1,14 @@
+# For documentation on this file, see:
+# https://github.com/riggraz/no-style-please#customize-the-menu
+
+entries:
+  - title: info
+    entries:
+      - title: github
+        url: https://github.com/demaga
+      - title: email
+        url: mailto:bohdan.kholodenko@gmail.com
+
+  - title: posts
+    post_list: true
+  
