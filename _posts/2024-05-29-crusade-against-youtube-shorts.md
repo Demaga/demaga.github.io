@@ -1,9 +1,3 @@
----
-layout: post
-title:  "Crusade against YouTube Shorts"
-date:   2024-05-29
-categories: jekyll update
----
 I love YouTube. But also, I hate YouTube.
 
 ![Ducks good... Rabbits bad](/assets/duck-rabbit.jpg)
