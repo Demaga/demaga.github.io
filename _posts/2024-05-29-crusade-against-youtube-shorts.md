@@ -134,6 +134,8 @@ If you want to filter your videos by duration too, please consider installing [L
 
 Full source code is available on [Github](https://github.com/Demaga/lean-youtube).
 
+There is also [a gist](https://gist.github.com/Demaga/4035a5c811d5a1a9ef758da43e6a3822) with minimal working example of requests interception.
+
 # Sources
 
 1. [https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts)
