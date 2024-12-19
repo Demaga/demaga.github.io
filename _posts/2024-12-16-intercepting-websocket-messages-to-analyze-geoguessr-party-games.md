@@ -9,7 +9,7 @@ If you look at the "webRequest" section of [JavaScript APIs for WebExtensions](h
 
 But, WebSocket requests != WebSocket messages. When the browser wants to open a WebSocket connection, it has to communicate this desire to server somehow. It is done by sending [HTTP 101 Switching Protocols](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/101) request to the same endpoint that would later be used to send WebSocket messages. So *that* is the request they're referring to. webRequest API just doesn't cover WebSocket messages.
 
-Okay, so maybe there is another API specifically for WebSockets? Well, yes, there is! Both Chrome and Firefox implement ["The WebSocket API"](The **WebSocket API**), but it is nothing like the webRequest one. There are no events you can listen to, no way to list existing connections, no way to interact with any existing connection. It's meant for creating new connections, not intercepting messages on existing ones.
+Okay, so maybe there is another API specifically for WebSockets? Well, yes, there is! Both Chrome and Firefox implement ["The WebSocket API"](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), but it is nothing like the webRequest one. There are no events you can listen to, no way to list existing connections, no way to interact with any existing connection. It's meant for creating new connections, not intercepting messages on existing ones.
 ## Hacky way
 
 There are a couple of ways to approach this. First one is to monkey-patch "WebSocket" object in your browser, so that you can execute any custom code before proceeding with an event.
