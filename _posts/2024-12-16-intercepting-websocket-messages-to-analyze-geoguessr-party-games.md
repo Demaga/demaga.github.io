@@ -172,10 +172,12 @@ You can use [these Jupyter Notebooks](https://github.com/Demaga/geoguessr-stats-
 3. My friends and I are really good at guessing Korea in GeoGuessr.
 
 # Links
-1. [GeoGuessr Stats for Chrome](https://chromewebstore.google.com/detail/geoguessr-stats/epjjmfojjmbgignfnkhgnbhkjdanmlfp?authuser=2&hl=en)
-2. [GeoGuessr Stats for Firefox](https://addons.mozilla.org/en-US/firefox/addon/geoguessr-stats/)
-3. [GeoGuessr Stats source code](https://github.com/Demaga/geoguessr-stats)
-4. [Jupyter Notebooks for analyzing games data](https://github.com/Demaga/geoguessr-stats-analysis)
+1. [(Gist) monkey-patch method](https://gist.github.com/Demaga/1c4a4ef634204156667503eacda529a9)
+2. [(Gist) Chrome DevTools method](https://gist.github.com/Demaga/f6820177b94f0e31daa95b7d70de82d7)
+3. [GeoGuessr Stats for Chrome](https://chromewebstore.google.com/detail/geoguessr-stats/epjjmfojjmbgignfnkhgnbhkjdanmlfp?authuser=2&hl=en)
+4. [GeoGuessr Stats for Firefox](https://addons.mozilla.org/en-US/firefox/addon/geoguessr-stats/)
+5. [GeoGuessr Stats source code](https://github.com/Demaga/geoguessr-stats)
+6. [Jupyter Notebooks for analyzing games data](https://github.com/Demaga/geoguessr-stats-analysis)
 
 # Sources
 1. [(StackOverflow) Override WebSocket onmessage event](https://stackoverflow.com/questions/67436474/how-to-override-websocket-onmessage-event)
