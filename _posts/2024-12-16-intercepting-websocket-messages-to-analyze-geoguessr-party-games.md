@@ -1,4 +1,4 @@
-My friends and I play [GeoGuessr](https://www.geoguessr.com/) every Wednesday. It's a small yet awesome tradition of ours, a reason to get together on Discord every week. Being a naturally curious person, I had a lot of questions to ask. What is our top score? How often do we mess up UK with New Zealand? Do we ever get Ukraine wrong?
+My friends and I play [GeoGuessr](https://www.geoguessr.com/) every Wednesday. It's a small yet awesome tradition of ours, a reason to get together on Discord every week. Being a naturally curious person, I had a lot of questions to ask. What is our top score? How often do we confuse UK with New Zealand? Do we ever get Ukraine wrong?
 Imagine my disappointment, when I realized that GeoGuessr provides neither such stats, nor any kind of records of our games. So I had to collect this data myself.
 
 Since I already had some experience [intercepting requests](https://demaga.github.io/2024/05/29/crusade-against-youtube-shorts.html) with browser extensions, I figured this was the way to go. There was only one catch - GeoGuessr uses **WebSockets** to synchronize game state between players. But it shouldn't be much harder to intercept WebSocket messages rather than HTTP requests, right? WRONG!
@@ -36,7 +36,7 @@ WebSocket.prototype.addEventListener = function (eventName, callback) {
 ```
 
 I made [a gist](https://gist.github.com/Demaga/1c4a4ef634204156667503eacda529a9) with full working example.
-It's pretty concise and, surprisingly, it works in both Chrome and Firefox! Hovewer, there are a couple of caveats:
+It's pretty concise and, surprisingly, it works in both Chrome and Firefox! However, there are a couple of caveats:
 - monkey-patching WebSocket object might break functionality that relies on it, so it has to be done with caution
 - it's executed in content script, while you might want to access some features available only in service workers (background scripts); in this case, send a message to service worker with [browser.runtime.sendMessage](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendMessage)
 - it must be executed in the "MAIN" world, while you might want to communicate with other parts of your extension; in this case, send a message with [window.postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
@@ -57,7 +57,8 @@ It was a bit hard for me to wrap my head around this, so I made a simple visuali
 There is another, although unconventional, option. Chrome implements [debugger API](https://developer.chrome.com/docs/extensions/reference/api/debugger#concepts_and_usage), which lets you attach a debugger to a tab (or tabs), listen to debugger events there, and send Chrome DevTools Protocol (CDP) commands. It's a very powerful API. A lot of things that are possible to do in DevTools are also possible to do with this API. Of course, certain features were not exposed due to security reasons. But it's still more than powerful enough for our use case. 
 
 Since we can see WebSocket messages in Chrome DevTools, chances are we can intercept them on a debugger level.
-![[ws-network-tab.png]]
+
+![screenshot of WS Network tab in DevTools](/assets/ws-network-tab.png)
 
 All we need to do is attach debugger to our tab, listen to all events, and react once [webSocketFrameReceived](https://chromedevtools.github.io/devtools-protocol/1-3/Network/#event-webSocketFrameReceived) event is fired. 
  ``` js
@@ -163,7 +164,7 @@ In the game, what matters most is not guessing the country, but guessing as clos
 
 Of course, many more interesting insights can be extracted with some thought.
 
-If you want, you can use [these Jupter Notebooks](https://github.com/Demaga/geoguessr-stats-analysis) as a starting point for analyzing your games too.
+You can use [these Jupyter Notebooks](https://github.com/Demaga/geoguessr-stats-analysis) as a starting point for analyzing your games too.
 
 # Conclusions
 1. Intercepting WebSocket messages in browser is not as easy as I thought, but absolutely achievable.
@@ -174,8 +175,8 @@ If you want, you can use [these Jupter Notebooks](https://github.com/Demaga/geog
 1. [GeoGuessr Stats for Chrome](https://chromewebstore.google.com/detail/geoguessr-stats/epjjmfojjmbgignfnkhgnbhkjdanmlfp?authuser=2&hl=en)
 2. [GeoGuessr Stats for Firefox](https://addons.mozilla.org/en-US/firefox/addon/geoguessr-stats/)
 3. [GeoGuessr Stats source code](https://github.com/Demaga/geoguessr-stats)
-4. [Jupyter Notebooks for games data analysis source code](https://github.com/Demaga/geoguessr-stats-analysis)
+4. [Jupyter Notebooks for analyzing games data](https://github.com/Demaga/geoguessr-stats-analysis)
 
 # Sources
 1. [(StackOverflow) Override WebSocket onmessage event](https://stackoverflow.com/questions/67436474/how-to-override-websocket-onmessage-event)
-2. [(StackOverflow) Manifest V3 "world" context](https://stackoverflow.com/questions/9515704/access-variables-and-functions-defined-in-page-context-from-an-extension/9517879#9517879) 
+2. [(StackOverflow) Manifest V3 "world" context](https://stackoverflow.com/questions/9515704/access-variables-and-functions-defined-in-page-context-from-an-extension/9517879#9517879)
