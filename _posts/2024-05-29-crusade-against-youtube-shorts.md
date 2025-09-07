@@ -130,12 +130,11 @@ Once we receive full response, we need to decode it, find videos we want to dele
 # Conclusions
 Intercepting requests with Firefox extensions is simple yet awesome! 
 
-If you want to filter your videos by duration too, please consider installing [Lean YouTube for Firefox](https://addons.mozilla.org/en-US/firefox/addon/lean-youtube/). 
-
-Full source code is available on [Github](https://github.com/Demaga/lean-youtube).
+Full source code is available on [Github](https://github.com/Demaga/lean-youtube). (UPD: not maintained)
 
 There is also [a gist](https://gist.github.com/Demaga/4035a5c811d5a1a9ef758da43e6a3822) with minimal working example of requests interception.
 
 # Sources
 
 1. [https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts)
+2. [Lean YouTube for Firefox](https://addons.mozilla.org/en-US/firefox/addon/lean-youtube/) (UPD: no longer working)

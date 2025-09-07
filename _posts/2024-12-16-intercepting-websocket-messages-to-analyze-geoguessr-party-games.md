@@ -1,7 +1,7 @@
-My friends and I play [GeoGuessr](https://www.geoguessr.com/) every Wednesday. It's a small yet awesome tradition of ours, a reason to get together on Discord every week. Being a naturally curious person, I had a lot of questions to ask. What is our top score? How often do we confuse UK with New Zealand? Do we ever get Ukraine wrong?
-Imagine my disappointment, when I realized that GeoGuessr provides neither such stats, nor any kind of records of our games. So I had to collect this data myself.
+My friends and I play [GeoGuessr](https://www.geoguessr.com/) every Wednesday. It's a small yet awesome tradition of ours, a reason to get together on Discord every week. Over time, we started asking questions. What is our top score? How often do we confuse UK with New Zealand? Does that guy ever gets Kenya right? Do we ever get Ukraine wrong?
+Unfortunately, GeoGuessr provides neither such stats, nor any kind of records of our games. So I had to collect this data myself.
 
-Since I already had some experience [intercepting requests](https://demaga.github.io/2024/05/29/crusade-against-youtube-shorts.html) with browser extensions, I figured this was the way to go. There was only one catch - GeoGuessr uses **WebSockets** to synchronize game state between players. But it shouldn't be much harder to intercept WebSocket messages rather than HTTP requests, right? WRONG!
+Since I already had some experience [intercepting requests](https://demaga.github.io/2024/05/29/crusade-against-youtube-shorts.html) with browser extensions, I figured this was the way to go. There was only one catch - GeoGuessr uses **WebSockets** to synchronize game state between players. But it shouldn't be much harder to intercept WebSocket messages rather than HTTP requests, right?
 ## Browser APIs
 If you look at the "webRequest" section of [JavaScript APIs for WebExtensions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API) docs, you'll see the following statement:
 
