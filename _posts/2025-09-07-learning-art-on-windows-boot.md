@@ -1,6 +1,6 @@
 My machine is fine, but it's not a racing car. When I boot into Windows, there is this noticeable delay between the wallpaper becoming visible, and OS becoming usable. In other words, I stare at my wallpaper for 5 seconds while waiting for Steam to load. So, instead of decluttering the system or upgrading the hardware, I decided to make my wallpaper more interesting to make waiting more enjoyable!
 
-So here is the result:
+So here is the result (imagine app shortcuts all over the left side):
 
 ![Allegory of the Medici family by Cherubino Alberti](/assets/art-wallpaper-medici.png)
 
@@ -46,4 +46,4 @@ It's awesome that entities like MET and VAM exist! Thanks for providing that val
 
 Windows has it's quirks, but you get used to it. I didn't encounter anything too insane, and in the end achieved my goal.
 
-Code available here: https://github.com/Demaga/art-wallpaper-changer
+Code available here: [https://github.com/Demaga/art-wallpaper-changer](https://github.com/Demaga/art-wallpaper-changer)
