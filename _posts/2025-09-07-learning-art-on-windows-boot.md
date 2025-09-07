@@ -45,3 +45,5 @@ To fix this, I tried to schedule the same script (replacing one) with [Windows T
 It's awesome that entities like MET and VAM exist! Thanks for providing that valuable data for free.
 
 Windows has it's quirks, but you get used to it. I didn't encounter anything too insane, and in the end achieved my goal.
+
+Code available here: https://github.com/Demaga/art-wallpaper-changer
